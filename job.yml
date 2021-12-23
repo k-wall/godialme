@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: godialme
+spec:
+  template:
+    spec:
+      containers:
+      - name: godialme
+        image: quay.io/k_wall/godialme:latest
+        command: ["kate-c---ser-hcn-uc-m-chg.bf2.kafka-stage.rhcloud.com",  "443"]
+      restartPolicy: Never
+  backoffLimit: 4
