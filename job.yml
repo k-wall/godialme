@@ -8,6 +8,10 @@ spec:
       containers:
       - name: godialme
         image: quay.io/k_wall/godialme:latest
-        command: ["kate-c---ser-hcn-uc-m-chg.bf2.kafka-stage.rhcloud.com",  "443"]
+        imagePullPolicy: Always
+        args: ["kwall-peng-c---ndj--obthifpb--a.bf2.kafka-stage.rhcloud.com",  "443"]
+        env:
+        - name: GODEBUG
+          value: netdns=go+9
       restartPolicy: Never
   backoffLimit: 4

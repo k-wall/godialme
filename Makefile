@@ -7,16 +7,6 @@ PROJECT_NAME ?= godialme
 BINARY ?= godialme
 RELEASE_VERSION ?= 1.0
 
-.PHONY: go_build
-go_build:
-	echo "Building Golang binary for ${RELEASE_VERSION}..."
-	CGO_ENABLED=0 GOOS=linux go build -ldflags="-X 'main.version=${RELEASE_VERSION}'" -a -installsuffix cgo -o $(BINARY) godialme.go
-
-.PHONY: go_clean
-go_clean:
-	echo "Cleaning Golang binary ..."
-	rm -rf cmd/target
-
 .PHONY: docker_build
 docker_build:
 	# Build Docker image ...
